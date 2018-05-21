@@ -1,0 +1,33 @@
+<html>
+
+
+<head>
+
+	</head>
+
+<body>
+
+<h1> search Restaurant </h1>
+
+
+<form method = 'post'>
+
+
+	<p>current location:</p>
+		<input type ='text' size='30' name='location' placeholder = '{{location}}' required>
+  <p>The name of the restaurant you plan to eat:</p>
+    <input type ='text' size='30' name='name' placeholder = '{{name}}' required>
+<input type='submit' value='search'>
+
+
+
+</form>
+</body>
+<script>
+$(function(){
+			$('input[type="text"]').change(function(){
+				 this.value = $.trim(this.value);
+			 });
+		});
+</script>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Meet N Eat</title>
+
+    <!-- Bootstrap -->
+
+
+      <link rel=stylesheet type=text/css href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='font-awesome/css/font-awesome.css') }}">
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/loginStyle.css') }}">
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap-datetimepicker.min.js') }}">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+		<div class="container">
+    <div class="row profile">
+		<div class="col-md-3">
+			<div class="profile-sidebar">
+				<!-- SIDEBAR USERPIC -->
+				<div class="profile-userpic">
+					<img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt="">
+				</div>
+				<!-- END SIDEBAR USERPIC -->
+				<!-- SIDEBAR USER TITLE -->
+				<div class="profile-usertitle">
+					<div class="profile-usertitle-name">
+						{{user.email}}
+					</div>
+
+				</div>
+				<!-- END SIDEBAR USER TITLE -->
+				<!-- SIDEBAR BUTTONS -->
+
+				<!-- END SIDEBAR BUTTONS -->
+				<!-- SIDEBAR MENU -->
+				<div class="profile-usermenu">
+					<ul class="nav">
+              <li>
+							<a href= '{{url_for('userpage',id=user.id)}}'>
+							<i class="glyphicon glyphicon-home"></i>
+							 show all request </a>
+						</li>
+						<li>
+							<a href = '{{url_for('Checktheproposal',id=user.id)}}'>
+							<i class="glyphicon glyphicon-user"></i>
+							check your proposal </a>
+						</li>
+						<li>
+							<a href='{{url_for('proposal',id=user.id)}}' >
+							<i class="glyphicon glyphicon-ok"></i>
+							check your request</a>
+						</li>
+            <li class="active">
+              <a href='#' >
+              <i class="glyphicon glyphicon-search"></i>
+              make a request</a>
+            </li>
+						<li >
+							<a href='{{url_for('showyourdate',id=user.id)}}' >
+							<i class="glyphicon glyphicon-search"></i>
+							show your date</a>
+						</li>
+					</ul>
+				</div>
+				<!-- END MENU -->
+			</div>
+		</div>
+		<div class="col-md-9">
+            <div class="profile-content">
+			           <h1>Your request already have been responsed </h1>
+                   <div class="searchbox">
+                     {% with messages = get_flashed_messages() %}
+                       {% if messages %}
+                       {% for message in messages %}
+                       <div class="alert alert-danger" role="alert">{{message}}</div>
+                        {% endfor %}
+
+                       {% endif %}
+                     {% endwith %}
+										 <form id="requestform" method="POST" novalidate="novalidate">
+												 <div class="form-group">
+														 <label for="location" class="control-label">the place you currently at</label>
+														 <input type="text" class="form-control" id="location" name="location" required>
+
+												 </div>
+												 <div class="form-group">
+														 <label for="meal_type" class="control-label">the kind of the meal you want to</label>
+														 <input type="text" class="form-control" id="meal_type" name="meal_type" required>
+
+
+												 </div>
+                         <div class="form-group">
+                           <label for="meal_type" class="control-label">the time you want to have meal</label>
+
+                                 <input  class="form-control" type="date" name="date">
+
+                             </div>
+                             <div class="form-group">
+                                     <input id="time"class="form-control" type="time" name="time">
+                                 </div>
+                             <div class="col-sm-offset-4 col-sm-5">
+                              <button type="submit" class="btn btn-success">Search</button>
+                           </div>
+
+                        </div>
+
+											 </form>
+									 </div>
+            </div>
+		</div>
+	</div>
+</div>
+
+<br>
+<br>
+
+
+		<script src="{{ url_for('static', filename='boostrap/js/bootstrap.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap-datetimepicker.min.js') }}"></script>
+
+
+	</body>
+	</html>
