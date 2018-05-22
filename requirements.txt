@@ -8,3 +8,4 @@ chardet==3.0.4
 certifi==2018.4.16
 Werkzeug==0.14.1
 gunicorn==19.8.1
+passlib==1.7.1
