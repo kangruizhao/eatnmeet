@@ -1,1 +1,1 @@
-web gunicorn routing:eatnmeet
+web python routing.py
