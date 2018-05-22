@@ -194,6 +194,5 @@ def deleteDate(id,date_id):
 def searchLocation(location,meat):
     restaurant_info=findARestaurant(meat,location)
     return restaurant_info['name']
-
-#3if __name__ == '__main__':
-#     app.run('127.0.0.1', 8000, debug=True)
+if __name__ == '__main__':
+   app.run('127.0.0.1',8000, debug=True)
