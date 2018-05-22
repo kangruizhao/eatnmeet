@@ -6,7 +6,7 @@ from sqlalchemy.orm import scoped_session
 from findARestaurant import findARestaurant
 from model import Base, User,Request, Proposal,MealDate
 engine = create_engine('sqlite:///data.db')
-
+import os
 from geocode import getGeocodeLocation
 import httplib2
 from flask import make_response
