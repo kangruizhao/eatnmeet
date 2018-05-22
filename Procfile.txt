@@ -1,1 +1,1 @@
-web: python routing.py
+web gunicorn routing:app
