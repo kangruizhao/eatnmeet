@@ -1,0 +1,10 @@
+https://goo.gl/images/syhQ24
+body {
+    padding-top: 90px;
+}
+<div class="col-md-8 col-md-offset-2">
+        <app-maincartfood
+               [food]="food"
+                *ngFor="let food of foods" (deleted)="handledelete($event)"></app-maincartfood>
+    </div>
+    <div> {{total}}</div>
